@@ -1,0 +1,814 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	<title>P | Slang.ee | Online slängisõnastik</title>
+	<link href="/favicon.png" type="image/x-icon" rel="icon" /><link href="/favicon.png" type="image/x-icon" rel="shortcut icon" /><link rel="stylesheet" type="text/css" href="/css/style.css" /><script type="text/javascript" src="/js/jquery.min.js"></script><script type="text/javascript" src="/js/infinity.min.js"></script><script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-20890868-5']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+
+</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1904649972941749",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+
+
+
+<body> 
+    <div class="outer_container"> 
+    	<div class="header_container"> 
+        	<div class="header"> 
+            	<div class="logo">
+            		<a href="/"><img src="/img/slang_logo.png" alt="Slang.ee - Online slängisõnastik" height="116" width="200" /></a>                </div> 
+                <div class="search"> 
+                	<div class="head_slogan"> 
+                        Slang.ee on kasutajate endi poolt defineeritud sõnadest koosnev slängisõnastik.<br /> 
+                        Tänaseks on lisatud <strong>8983</strong> definitsiooni.                        <a href="/definitions/add">Lisa uus definitsioon »</a>                   	</div> 
+                   
+                   	<form autocomplete="off" id="DefinitionSearchForm" method="post" action="/definitions/search" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST" /></div>	<div class="search_holder">
+    	<input 	name="data[Definition][search]" 
+    			type="text"
+    			id="search_input" 
+    			class="text_input" 
+    			value="Sisesta otsitav sõna..."
+    			onfocus="if (this.value == 'Sisesta otsitav sõna...') { this.value = ''; }"
+    			onblur="if (this.value == '') { this.value = 'Sisesta otsitav sõna...'; }; $('#search_suggestions').fadeOut();"
+    			 /> 
+    	<a href="#" onclick="$('#DefinitionSearchForm').submit(); return false;"><img style="margin-top: 5px;" src="/img/search_submit.png" width="140" height="50" alt="Otsi" border="0" /></a>
+    	<div id="search_suggestions" style="display: none;"></div>
+	</div> 
+</form>
+<script type="text/javascript">
+	var searchTimer = false;
+	var xhr = {abort:function(){}};
+
+	$('#search_input').keyup(function(event){
+	
+		if (event.which == 40) {	// down
+	        
+	        $('LI.currentSearchItem').removeClass('currentSearchItem').next().addClass('currentSearchItem');
+	        
+	        if ($('LI.currentSearchItem').length == 0) {
+		        $('#search_suggestions UL LI:first').addClass('currentSearchItem');
+			}
+	        
+	        return false; // don't execute the default action (scrolling or whatever)
+	    } else if (event.which == 38) {
+	    
+	    	$('LI.currentSearchItem').removeClass('currentSearchItem').prev().addClass('currentSearchItem');
+	        
+	        if ($('LI.currentSearchItem').length == 0) {
+		        $('#search_suggestions UL LI:last').addClass('currentSearchItem');
+			}
+	    
+	    	
+	    	return false;
+	    
+	    } else if (event.which == 13) {	// enter
+	    
+	    	if ($('#search_suggestions LI.currentSearchItem A').length > 0) {
+	    	
+		    	var href = $('#search_suggestions LI.currentSearchItem A').prop('href');
+		    	
+		    	window.location = href;
+		    	return false;
+	    	
+	    	} else {
+	    		
+	    		$('#DefinitionSearchForm').submit();
+	    		
+	    	}
+	    
+	    } else {
+	
+			// Tühistame klahvivajutuse ootamise
+			clearTimeout(searchTimer);
+		
+			searchTimer = setTimeout(function(){
+			
+				if ($('#search_input').val().length < 2) {
+					$('#search_suggestions').hide();
+					return false;
+				}
+			
+				if ($("#search_suggestions").text().length == 0) {
+					$('#search_suggestions').hide();
+				}
+			
+				// Vana otsing ei huvita meid enam
+				xhr.abort();
+				xhr = $.ajax({
+					url: '/definitions/suggestions',
+					update: '#search_suggestions',
+					data: $('#DefinitionSearchForm').serialize(),
+					type: 'post',
+					success: function(html){
+						$("#search_suggestions").html(html).show();
+						
+						if ($("#search_suggestions").text().length == 0) {
+							$('#search_suggestions').hide();
+						}
+					}
+				});
+			},10);
+			
+		}
+	});
+	
+	
+	$("#DefinitionSearchForm").bind("keydown", function(e) {
+		if (e.keyCode == 13) return false;
+	});
+</script>                   	
+                </div> 
+            </div> 
+        
+        
+        	
+            <!-- ADSENSE -->
+            <script type="text/javascript"><!--
+            google_ad_client = "ca-pub-1904649972941749";
+            /* Slang728x90 */
+            google_ad_slot = "8141483684";
+            google_ad_width = 728;
+            google_ad_height = 90;
+            //-->
+            </script>
+            <script type="text/javascript"
+            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+            </script>
+        
+        
+        
+        </div><!-- /HEADER-CONTAINER -->
+        <div class="inner_container"> 
+			<h3>Sirvi sõnu</h3> 
+<div class="alpha">
+					<a href="/definitions/character/A" class="character">A</a>					<a href="/definitions/character/B" class="character">B</a>					<a href="/definitions/character/C" class="character">C</a>					<a href="/definitions/character/D" class="character">D</a>					<a href="/definitions/character/E" class="character">E</a>					<a href="/definitions/character/F" class="character">F</a>					<a href="/definitions/character/G" class="character">G</a>					<a href="/definitions/character/H" class="character">H</a>					<a href="/definitions/character/I" class="character">I</a>					<a href="/definitions/character/J" class="character">J</a>					<a href="/definitions/character/K" class="character">K</a>					<a href="/definitions/character/L" class="character">L</a>					<a href="/definitions/character/M" class="character">M</a>					<a href="/definitions/character/N" class="character">N</a>					<a href="/definitions/character/O" class="character">O</a>					<a href="/definitions/character/P" class="character active">P</a>					<a href="/definitions/character/Q" class="character">Q</a>					<a href="/definitions/character/R" class="character">R</a>					<a href="/definitions/character/S" class="character">S</a>					<a href="/definitions/character/Š" class="character">Š</a>					<a href="/definitions/character/Z" class="character">Z</a>					<a href="/definitions/character/Ž" class="character">Ž</a>					<a href="/definitions/character/T" class="character">T</a>					<a href="/definitions/character/U" class="character">U</a>					<a href="/definitions/character/V" class="character">V</a>					<a href="/definitions/character/W" class="character">W</a>					<a href="/definitions/character/Õ" class="character">Õ</a>					<a href="/definitions/character/Ä" class="character">Ä</a>					<a href="/definitions/character/Ö" class="character">Ö</a>					<a href="/definitions/character/Ü" class="character">Ü</a>					<a href="/definitions/character/X" class="character">X</a>					<a href="/definitions/character/Y" class="character">Y</a>	    <div class="clearfix"></div> 
+</div> 
+
+
+			            
+            <!-- LEFT COLUMN --> 
+            <div class="column_left"> 
+            					<h3>Definitsioonid: P</h3>
+
+
+			<div class="box"> 
+
+	<div class="rate" id="rates_16662">
+        <a href="/definitions/vote_up/16662" class="rate up" id="rate_up_16662">+77</a>
+<a href="/definitions/vote_down/16662" class="rate down" id="rate_down_16662">-59</a>
+
+
+
+    </div> 
+    
+    <h4>
+    <a href="/paska-panema">paska panema</a>        </h4>
+    
+    <div class="definition">Peeretama.</div> 
+    
+    <div class="example">Siin rõve hais, kes teist paska pani?</div> 
+    
+    <div class="date">
+    	Lisas 
+    	<a href="/kasutaja/marx20">marx20</a>    	22.05.2019    	
+    	
+    	
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fpaska-panema&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div>			<div class="box"> 
+
+	<div class="rate" id="rates_14206">
+        <a href="/definitions/vote_up/14206" class="rate up" id="rate_up_14206">+120</a>
+<a href="/definitions/vote_down/14206" class="rate down" id="rate_down_14206">-102</a>
+
+
+
+    </div> 
+    
+    <h4>
+    <a href="/pilukas">Pilukas</a>        </h4>
+    
+    <div class="definition">Solvang asiaadsest rassist inimese vastu tema väikeste silmade pärast.</div> 
+    
+    <div class="example">Riisipõld v? Ainult pilukad kasvatavad ja söövad riisi!</div> 
+    
+    <div class="date">
+    	Lisas 
+    	<a href="/kasutaja/sestetspam">sestetspam</a>    	09.08.2018    	
+    	
+    	
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fpilukas&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div>			<div class="box"> 
+
+	<div class="rate" id="rates_1338">
+        <a href="/definitions/vote_up/1338" class="rate up" id="rate_up_1338">+239</a>
+<a href="/definitions/vote_down/1338" class="rate down" id="rate_down_1338">-222</a>
+
+
+
+    </div> 
+    
+    <h4>
+    <a href="/piparkoogi-tainas">Piparkoogi tainas</a>        </h4>
+    
+    <div class="definition">feik kaka junn mida saab edukalt panna wc poti ääre peale ning siis tuleb ainult oodata inimeste reaktsiooni</div> 
+    
+    <div class="example">tegime eile piparkoogi taigna junni, kurat kus kärt alles ehmus</div> 
+    
+    <div class="date">
+    	Lisas 
+    	<a href="/kasutaja/glasuuur">glasuuur</a>    	05.01.2013    	
+    	
+    	
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fpiparkoogi-tainas&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div>			<div class="box"> 
+
+	<div class="rate" id="rates_1603">
+        <a href="/definitions/vote_up/1603" class="rate up" id="rate_up_1603">+237</a>
+<a href="/definitions/vote_down/1603" class="rate down" id="rate_down_1603">-220</a>
+
+
+
+    </div> 
+    
+    <h4>
+    <a href="/palmi-musi-rap">palmi musi räp</a>        </h4>
+    
+    <div class="definition">oma hoodi gangnam style, mille peaosaline on nö mürsik</div> 
+    
+    <div class="example">teeks wuuduuril PMR'i ja lisaks sinna ''Marvivi stiilis'' liigutused nt: popsutamine , onaneerimine, kaika lükkamine jne.</div> 
+    
+    <div class="date">
+    	Lisas 
+    	<a href="/kasutaja/cluckymunN">cluckymunN</a>    	15.02.2013    	
+    	
+    	
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fpalmi-musi-rap&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div>			<div class="box"> 
+
+	<div class="rate" id="rates_2578">
+        <a href="/definitions/vote_up/2578" class="rate up" id="rate_up_2578">+528</a>
+<a href="/definitions/vote_down/2578" class="rate down" id="rate_down_2578">-511</a>
+
+
+
+    </div> 
+    
+    <h4>
+    <a href="/putsistama">putsistama</a>        </h4>
+    
+    <div class="definition">pihku peksma,lihtsalt pedeks muutuma ja endal lahti imema.</div> 
+    
+    <div class="example">türa ära putsista.</div> 
+    
+    <div class="date">
+    	Lisas 
+    	<a href="/kasutaja/major2">major2</a>    	17.06.2013    	
+    	
+    	
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fputsistama&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div>			<div class="box"> 
+
+	<div class="rate" id="rates_2911">
+        <a href="/definitions/vote_up/2911" class="rate up" id="rate_up_2911">+280</a>
+<a href="/definitions/vote_down/2911" class="rate down" id="rate_down_2911">-263</a>
+
+
+
+    </div> 
+    
+    <h4>
+    <a href="/pump">Pump</a>        </h4>
+    
+    <div class="definition">Kutt kes pumpab suu kaudu räigelt paska, niipalju sitta toodab et ei jõua ära kadudagi. Tavaliselt on tegu homodega, üks näide on Robert Lauri</div> 
+    
+    <div class="example">No türa, see vend on ikka reaalne pump!</div> 
+    
+    <div class="date">
+    	Lisas 
+    	<a href="/kasutaja/anony1">anony1</a>    	14.08.2013    	
+    	
+    	
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fpump&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div>			<div class="box"> 
+
+	<div class="rate" id="rates_8424">
+        <a href="/definitions/vote_up/8424" class="rate up" id="rate_up_8424">+178</a>
+<a href="/definitions/vote_down/8424" class="rate down" id="rate_down_8424">-161</a>
+
+
+
+    </div> 
+    
+    <h4>
+    <a href="/piiki">Piiki</a>        </h4>
+    
+    <div class="definition">Pihku panema, pihku peksma, masturbeerima</div> 
+    
+    <div class="example">Sõber küsis: "Mis sa homme teed?"<br />
+Minu vastus: Piiki</div> 
+    
+    <div class="date">
+    	Lisas 
+    	<a href="/kasutaja/Piiki">Piiki</a>    	04.12.2016    	
+    	
+    	
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fpiiki&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div>			<div class="box"> 
+
+	<div class="rate" id="rates_11927">
+        <a href="/definitions/vote_up/11927" class="rate up" id="rate_up_11927">+194</a>
+<a href="/definitions/vote_down/11927" class="rate down" id="rate_down_11927">-177</a>
+
+
+
+    </div> 
+    
+    <h4>
+    <a href="/polla">Polla</a>        </h4>
+    
+    <div class="definition">Pool grammi midagi, tavaliselt kivi või muud ainet.</div> 
+    
+    <div class="example">Yo Andre, klapime polla.</div> 
+    
+    <div class="date">
+    	Lisas 
+    	<a href="/kasutaja/Mallekalle">Mallekalle</a>    	04.12.2017    	
+    	
+    	
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fpolla&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div>			<div class="box"> 
+
+	<div class="rate" id="rates_12108">
+        <a href="/definitions/vote_up/12108" class="rate up" id="rate_up_12108">+147</a>
+<a href="/definitions/vote_down/12108" class="rate down" id="rate_down_12108">-130</a>
+
+
+
+    </div> 
+    
+    <h4>
+    <a href="/pa-mollu">Pa&#039;möllu</a>        </h4>
+    
+    <div class="definition">Pidu panema, möllama, möllutama, jne</div> 
+    
+    <div class="example">Pa'möllu ka täna?<br />
+Ikka!</div> 
+    
+    <div class="date">
+    	Lisas 
+    	<a href="/kasutaja/Pa_moellu">Pa&#039;möllu</a>    	14.12.2017    	
+    	
+    	
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fpa-mollu&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div>			<div class="box"> 
+
+	<div class="rate" id="rates_15008">
+        <a href="/definitions/vote_up/15008" class="rate up" id="rate_up_15008">+119</a>
+<a href="/definitions/vote_down/15008" class="rate down" id="rate_down_15008">-102</a>
+
+
+
+    </div> 
+    
+    <h4>
+    <a href="/pohja-gang">Põhja gang</a>        </h4>
+    
+    <div class="definition">Munnid Kuressaarest</div> 
+    
+    <div class="example">Kari väikeseid/suuri väntasid kes jooksevad linnapeal,<br />
+nad pole ikka veel julgenud oma vanust avalikustada, kuna kõik on 10 aastased väänikud.</div> 
+    
+    <div class="date">
+    	Lisas 
+    	<a href="/kasutaja/Ida_Gang">Ida Gang</a>    	05.12.2018    	
+    	
+    	
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fpohja-gang&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div>			<div class="box"> 
+
+	<div class="rate" id="rates_805">
+        <a href="/definitions/vote_up/805" class="rate up" id="rate_up_805">+275</a>
+<a href="/definitions/vote_down/805" class="rate down" id="rate_down_805">-259</a>
+
+
+
+    </div> 
+    
+    <h4>
+    <a href="/poolseks">Poolseks</a>        </h4>
+    
+    <div class="definition">kellegiga alasti ujumine.</div> 
+    
+    <div class="example">qtid läksid poolseksiga tegelema</div> 
+    
+    <div class="date">
+    	Lisas 
+    	<a href="/kasutaja/lol">lol</a>    	19.07.2012    	
+    	
+    	
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fpoolseks&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div>			<div class="box"> 
+
+	<div class="rate" id="rates_833">
+        <a href="/definitions/vote_up/833" class="rate up" id="rate_up_833">+291</a>
+<a href="/definitions/vote_down/833" class="rate down" id="rate_down_833">-275</a>
+
+
+
+    </div> 
+    
+    <h4>
+    <a href="/pahklipurustaja">pähklipurustaja</a>        </h4>
+    
+    <div class="definition">eit kes teeb hardcore'i liiga kõvasti</div> 
+    
+    <div class="example">ja nii ongi</div> 
+    
+    <div class="date">
+    	Lisas 
+    	<a href="/kasutaja/fupapolekohupekk">fupapolekõhupekk</a>    	01.08.2012    	
+    	
+    	
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fpahklipurustaja&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div>			<div class="box"> 
+
+	<div class="rate" id="rates_1230">
+        <a href="/definitions/vote_up/1230" class="rate up" id="rate_up_1230">+381</a>
+<a href="/definitions/vote_down/1230" class="rate down" id="rate_down_1230">-365</a>
+
+
+
+    </div> 
+    
+    <h4>
+    <a href="/pn">PN</a>        </h4>
+    
+    <div class="definition">Perse nuss</div> 
+    
+    <div class="example">Kas sa Mariiaga PNi ka tegid ? <br />
+Eks see tänane üks paras PN tule.</div> 
+    
+    <div class="date">
+    	Lisas 
+    	<a href="/kasutaja/Kalju_Rove">Kalju Rõve</a>    	16.12.2012    	
+    	
+    	
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fpn&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div>			<div class="box"> 
+
+	<div class="rate" id="rates_1664">
+        <a href="/definitions/vote_up/1664" class="rate up" id="rate_up_1664">+269</a>
+<a href="/definitions/vote_down/1664" class="rate down" id="rate_down_1664">-253</a>
+
+
+
+    </div> 
+    
+    <h4>
+    <a href="/ph">PH</a>        </h4>
+    
+    <div class="definition">Pole Hullu.</div> 
+    
+    <div class="example">Oihh sorry, et ma su koera peale astusin.<br />
+PH</div> 
+    
+    <div class="date">
+    	Lisas 
+    	<a href="/kasutaja/Janno_Saamer">Janno Saamer</a>    	27.02.2013    	
+    	
+    	
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fph&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div>			<div class="box"> 
+
+	<div class="rate" id="rates_1820">
+        <a href="/definitions/vote_up/1820" class="rate up" id="rate_up_1820">+252</a>
+<a href="/definitions/vote_down/1820" class="rate down" id="rate_down_1820">-236</a>
+
+
+
+    </div> 
+    
+    <h4>
+    <a href="/peeter">Peeter</a>        </h4>
+    
+    <div class="definition">täiega kõva mees</div> 
+    
+    <div class="example">ouu vaata nagu Tõnu et sa oled nagu täiega Peeter !</div> 
+    
+    <div class="date">
+    	Lisas 
+    	<a href="/kasutaja/xxxxLappaKottexxx">xxxxLappaKottexxx</a>    	20.03.2013    	
+    	
+    	
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fpeeter&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div>			<div class="box"> 
+
+	<div class="rate" id="rates_3734">
+        <a href="/definitions/vote_up/3734" class="rate up" id="rate_up_3734">+235</a>
+<a href="/definitions/vote_down/3734" class="rate down" id="rate_down_3734">-219</a>
+
+
+
+    </div> 
+    
+    <h4>
+    <a href="/pogo">Pogo</a>        </h4>
+    
+    <div class="definition">Feimar tartust, arvab et tal on nunnud lokid</div> 
+    
+    <div class="example">mul on nii nunnud lokid - pogo<br />
+pogo hoolib teist kõigist kiisumiisud (L)(L)</div> 
+    
+    <div class="date">
+    	Lisas 
+    	<a href="/kasutaja/pogo_austaja">pogo austaja</a>    	26.12.2013    	
+    	
+    	
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fpogo&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div>			<div class="box"> 
+
+	<div class="rate" id="rates_6736">
+        <a href="/definitions/vote_up/6736" class="rate up" id="rate_up_6736">+187</a>
+<a href="/definitions/vote_down/6736" class="rate down" id="rate_down_6736">-171</a>
+
+
+
+    </div> 
+    
+    <h4>
+    <a href="/peavalu">Peavalu</a>        </h4>
+    
+    <div class="definition">Siis kui keegi on terve öö saanud pepunussi ja nüüd tahaks täiega pihku lüüa aga eitea kuidas, sest emme on seljataga</div> 
+    
+    <div class="example">Karlil pea valutab.</div> 
+    
+    <div class="date">
+    	Lisas 
+    	<a href="/kasutaja/Igorikesekene">Igorikesekene</a>    	16.12.2015    	
+    	
+    	
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fpeavalu&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div>			<div class="box"> 
+
+	<div class="rate" id="rates_9984">
+        <a href="/definitions/vote_up/9984" class="rate up" id="rate_up_9984">+130</a>
+<a href="/definitions/vote_down/9984" class="rate down" id="rate_down_9984">-114</a>
+
+
+
+    </div> 
+    
+    <h4>
+    <a href="/puukler">Puukler</a>        </h4>
+    
+    <div class="definition">Puuküürnikust maakler.</div> 
+    
+    <div class="example">Relika on puukler ja keeldub välja kolimast. </div> 
+    
+    <div class="date">
+    	Lisas 
+    	<a href="/kasutaja/dr_Tyra_P_Ea">dr Tyra P. Ea</a>    	11.07.2017    	
+    	
+    	
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fpuukler&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div>			<div class="box"> 
+
+	<div class="rate" id="rates_1121">
+        <a href="/definitions/vote_up/1121" class="rate up" id="rate_up_1121">+288</a>
+<a href="/definitions/vote_down/1121" class="rate down" id="rate_down_1121">-273</a>
+
+
+
+    </div> 
+    
+    <h4>
+    <a href="/pigi">Pigi</a>        </h4>
+    
+    <div class="definition">Suits või neeger.</div> 
+    
+    <div class="example">Tavai lähme teeme pigi!<br />
+Tra vaata seda pigi seal, ei paista väljagi nah.. Pole mõtet pesema minnagi niikuinii puhtaks ei saa.</div> 
+    
+    <div class="date">
+    	Lisas 
+    	<a href="/kasutaja/Fabi">Fabi</a>    	20.11.2012    	
+    	
+    	
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fpigi&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div>			<div class="box"> 
+
+	<div class="rate" id="rates_4597">
+        <a href="/definitions/vote_up/4597" class="rate up" id="rate_up_4597">+250</a>
+<a href="/definitions/vote_down/4597" class="rate down" id="rate_down_4597">-235</a>
+
+
+
+    </div> 
+    
+    <h4>
+    <a href="/penka">penka</a>        </h4>
+    
+    <div class="definition">lahedam versioon peenisest</div> 
+    
+    <div class="example">mul parem penka kui sul</div> 
+    
+    <div class="date">
+    	Lisas 
+    	<a href="/kasutaja/RoosaPunane">RoosaPunane</a>    	16.05.2014    	
+    	
+    	
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fpenka&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div>		
+	
+	
+	<!-- Shows the page numbers -->
+<!-- Shows the next and previous links -->
+<span><a href="/definitions/character/P/page:4" class="prev">« Eelmine</a></span>
+<span><a href="/definitions/character/P/page:1">1</a></span> | <span><a href="/definitions/character/P/page:2">2</a></span> | <span><a href="/definitions/character/P/page:3">3</a></span> | <span><a href="/definitions/character/P/page:4">4</a></span> | <span class="current">5</span> | <span><a href="/definitions/character/P/page:6">6</a></span> | <span><a href="/definitions/character/P/page:7">7</a></span> | <span><a href="/definitions/character/P/page:8">8</a></span> | <span><a href="/definitions/character/P/page:9">9</a></span>
+<span><a href="/definitions/character/P/page:6" class="next">Järgmine »</a></span> 
+<!-- prints X of Y, where X is current page and Y is number of pages -->
+
+            </div> 
+            <!-- /LEFT COLUMN --> 
+            
+            
+            <!-- RIGHT COLUMN --> 
+            <div class="column_right">
+            	<div id="right" class="box">
+	            	<h1>Tänane släng</h1> 
+<div id="right" class=""> 
+    <div class="rate" id="rates_7002">
+    <a href="/definitions/vote_up/7002" class="rate up" id="rate_up_7002">+153</a>
+<a href="/definitions/vote_down/7002" class="rate down" id="rate_down_7002">-149</a>
+
+
+
+</div> 
+
+<h2>
+<a href="/sants">SANTS</a></h2>
+
+<div class="definition">Alakasvuline poiss tansaaniast kellel puudub perekasvatus ja enesekontroll <br />
+(õpib 9-ndas klassis)</div> 
+
+<div class="example">Alakasvu iga , kiilakas kajakas , puudub austus võrdõiguste vastu</div> 
+
+<div class="date">
+	Lisas 
+	<a href="/kasutaja/Pedede_Kari">Pedede Kari</a>	09.02.2016	
+	
+	
+</div>
+<iframe src="http://www.facebook.com/plugins/like.php?app_id=162157823864565&amp;href=http%3A%2F%2Fslang.ee%2Fdefinitions%2Fview%2Fsants&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe></div> 
+            	</div>
+			</div>
+			<div class="column_right">
+				<h3>Sõnade TOP 25</h3>
+				<div class="top25">
+											<a href="/kuldne-vann" style="font-size: 24px;">kuldne vann</a>											<a href="/dab" style="font-size: 24px;">Dab</a>											<a href="/kfc" style="font-size: 24px;">KFC</a>											<a href="/kapinerd" style="font-size: 24px;">Kapinerd</a>											<a href="/kitsad" style="font-size: 24px;">KITSAD</a>											<a href="/rn-lilla" style="font-size: 18px;">Õrn lilla</a>											<a href="/xd" style="font-size: 18px;">xD</a>											<a href="/leevike" style="font-size: 18px;">Leevike</a>											<a href="/enivei" style="font-size: 18px;">Enivei</a>											<a href="/russ-id" style="font-size: 18px;">Russ(id)</a>											<a href="/muruniiduk" style="font-size: 14px;">muruniiduk</a>											<a href="/klaaser-noun" style="font-size: 14px;">Klaaser(noun)</a>											<a href="/prujus" style="font-size: 14px;">prujus</a>											<a href="/jota" style="font-size: 14px;">Jota</a>											<a href="/paldiski-kikilips" style="font-size: 14px;">Paldiski kikilips</a>											<a href="/kaks-kotti-ja-kusehais" style="font-size: 12px;">kaks kotti ja kusehais</a>											<a href="/poluloluline" style="font-size: 12px;">poluloluline</a>											<a href="/pederast" style="font-size: 12px;">Pederast</a>											<a href="/vukk-i-mati" style="font-size: 12px;">Vükk-i Mati </a>											<a href="/ur" style="font-size: 12px;">Ur</a>											<a href="/mauk" style="font-size: 10px;">Mauk</a>											<a href="/voiku" style="font-size: 10px;">Võiku</a>											<a href="/rahna-panema" style="font-size: 10px;">Rähna panema</a>											<a href="/oolup" style="font-size: 10px;">Oolup</a>											<a href="/sorts" style="font-size: 10px;">SORTS</a>									</div>
+            </div>
+            <div class="column_right" style="margin-top: 10px;">
+                <div id="fb-root"></div>
+                <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+                <fb:like-box href="http://www.facebook.com/pages/Slangee/223747067654821" width="440" show_faces="true" border_color="#FFF" stream="false" header="false">
+                </fb:like-box>                
+            </div>            
+            <!-- /RIGHT COLUMN --> 
+            
+		</div> 
+        <div class="clearfix"></div> 
+        <div class="footer"> 
+       		<!--<a href="/pages/reklaam">Reklaam</a> |-->
+<a href="/pages/kontakt">Kontakt</a><!--
+ |
+<a href="http://napiszleng.hu" target="_blank">Napiszleng.hu</a> 
+ |
+<a href="http://fartfox.com" target="_blank">Fartfox.com</a>
+-->
+
+<div style="padding-top: 15px; text-align: center;">
+	
+	<!--<a href="http://pay4results24.eu/?a=439&c=14&p=c&s1=" target="_blank"><img src="http://slang.ee/img/728x90_est.gif" width="728" height="90" border="0"></a>-->	
+	      
+</div>
+
+<div class="footer_text">
+
+<p>Keel on inimesele omane kompleksne suhtlussüsteem, mille dünaamiline osa on släng. Just släng on see, mis hoiab keele värskena ja uuendab keelt selle orgaanilises arenguprotsessis. Meile omane ja loogilisena tunduv släng kinnistub keeles ja saab ajapikku traditsioonilise sõnavara osaks palju suurema tõenäosusega, kui mehhaaniliselt meie leksikoni lisatavad uudissõnad. </p>
+
+<p>Släng võib olla regionaalne, aga väga tihti ka omane mitte kindlale geograafilisele alale, vaid konkreetsele subkultuurile. Nii on teatud slängisõnad levinud näiteks Tallinnas ja erinvad Pärnus kasutusel olevatest väljenditest. Teisalt on spetsiifiline slängikasutus omane näiteks lumelauduritele, arvutimänguritele või muusikutele. Sellele vaatamata levivad paljud slängisõnad väljapoole oma tekkepaika või sotsiaalset gruppi ning saavad üldtunnustatuks kogu keeleruumis.</p>
+
+<p>Slängi teket indutseerib keele kokkupuude teiste keeltega. Just seepärast on eesti keeles palju laenslängi inglise ja vene keelest. </p>
+
+<p>Sageli aitab slängisõna oma mõtet täpsemini, arusaadavamalt või värvikamalt vestluskaaslasele kommunikeerida, mistõttu on intiimsete seltskondade slängikasutus märksa ohtram, kui suuremate sotsiaalsete gruppide oma.</p>
+
+<p>Släng leiab palju kasutust tabude kirjeldamisel, mille puhul traditsionaalne keelekasutus on sageli vaene. Seetõttu on släng eriti mahlane vägivalla, kuritegevuse ja seksi kontekstis. </p>
+
+<p>Mida mingi släng tähendab? Kes on rahaboss? Kes või mis on tups? Nendele ja paljudele teistele slängisõnadele leiad definitsiooni slang.ee andmebaasist.</p>
+
+</div>        </div> 
+    </div>
+        <script type="text/javascript">
+//<![CDATA[
+$(document).ready(function () {$("#rate_up_16662").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_16662").html(data);}, url:"\/definitions\/vote_up\/16662"});
+return false;});
+$("#rate_down_16662").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_16662").html(data);}, url:"\/definitions\/vote_down\/16662"});
+return false;});
+$("#rate_up_14206").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_14206").html(data);}, url:"\/definitions\/vote_up\/14206"});
+return false;});
+$("#rate_down_14206").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_14206").html(data);}, url:"\/definitions\/vote_down\/14206"});
+return false;});
+$("#rate_up_1338").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_1338").html(data);}, url:"\/definitions\/vote_up\/1338"});
+return false;});
+$("#rate_down_1338").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_1338").html(data);}, url:"\/definitions\/vote_down\/1338"});
+return false;});
+$("#rate_up_1603").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_1603").html(data);}, url:"\/definitions\/vote_up\/1603"});
+return false;});
+$("#rate_down_1603").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_1603").html(data);}, url:"\/definitions\/vote_down\/1603"});
+return false;});
+$("#rate_up_2578").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_2578").html(data);}, url:"\/definitions\/vote_up\/2578"});
+return false;});
+$("#rate_down_2578").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_2578").html(data);}, url:"\/definitions\/vote_down\/2578"});
+return false;});
+$("#rate_up_2911").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_2911").html(data);}, url:"\/definitions\/vote_up\/2911"});
+return false;});
+$("#rate_down_2911").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_2911").html(data);}, url:"\/definitions\/vote_down\/2911"});
+return false;});
+$("#rate_up_8424").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_8424").html(data);}, url:"\/definitions\/vote_up\/8424"});
+return false;});
+$("#rate_down_8424").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_8424").html(data);}, url:"\/definitions\/vote_down\/8424"});
+return false;});
+$("#rate_up_11927").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_11927").html(data);}, url:"\/definitions\/vote_up\/11927"});
+return false;});
+$("#rate_down_11927").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_11927").html(data);}, url:"\/definitions\/vote_down\/11927"});
+return false;});
+$("#rate_up_12108").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_12108").html(data);}, url:"\/definitions\/vote_up\/12108"});
+return false;});
+$("#rate_down_12108").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_12108").html(data);}, url:"\/definitions\/vote_down\/12108"});
+return false;});
+$("#rate_up_15008").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_15008").html(data);}, url:"\/definitions\/vote_up\/15008"});
+return false;});
+$("#rate_down_15008").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_15008").html(data);}, url:"\/definitions\/vote_down\/15008"});
+return false;});
+$("#rate_up_805").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_805").html(data);}, url:"\/definitions\/vote_up\/805"});
+return false;});
+$("#rate_down_805").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_805").html(data);}, url:"\/definitions\/vote_down\/805"});
+return false;});
+$("#rate_up_833").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_833").html(data);}, url:"\/definitions\/vote_up\/833"});
+return false;});
+$("#rate_down_833").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_833").html(data);}, url:"\/definitions\/vote_down\/833"});
+return false;});
+$("#rate_up_1230").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_1230").html(data);}, url:"\/definitions\/vote_up\/1230"});
+return false;});
+$("#rate_down_1230").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_1230").html(data);}, url:"\/definitions\/vote_down\/1230"});
+return false;});
+$("#rate_up_1664").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_1664").html(data);}, url:"\/definitions\/vote_up\/1664"});
+return false;});
+$("#rate_down_1664").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_1664").html(data);}, url:"\/definitions\/vote_down\/1664"});
+return false;});
+$("#rate_up_1820").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_1820").html(data);}, url:"\/definitions\/vote_up\/1820"});
+return false;});
+$("#rate_down_1820").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_1820").html(data);}, url:"\/definitions\/vote_down\/1820"});
+return false;});
+$("#rate_up_3734").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_3734").html(data);}, url:"\/definitions\/vote_up\/3734"});
+return false;});
+$("#rate_down_3734").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_3734").html(data);}, url:"\/definitions\/vote_down\/3734"});
+return false;});
+$("#rate_up_6736").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_6736").html(data);}, url:"\/definitions\/vote_up\/6736"});
+return false;});
+$("#rate_down_6736").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_6736").html(data);}, url:"\/definitions\/vote_down\/6736"});
+return false;});
+$("#rate_up_9984").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_9984").html(data);}, url:"\/definitions\/vote_up\/9984"});
+return false;});
+$("#rate_down_9984").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_9984").html(data);}, url:"\/definitions\/vote_down\/9984"});
+return false;});
+$("#rate_up_1121").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_1121").html(data);}, url:"\/definitions\/vote_up\/1121"});
+return false;});
+$("#rate_down_1121").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_1121").html(data);}, url:"\/definitions\/vote_down\/1121"});
+return false;});
+$("#rate_up_4597").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_4597").html(data);}, url:"\/definitions\/vote_up\/4597"});
+return false;});
+$("#rate_down_4597").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_4597").html(data);}, url:"\/definitions\/vote_down\/4597"});
+return false;});
+$("#rate_up_7002").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_7002").html(data);}, url:"\/definitions\/vote_up\/7002"});
+return false;});
+$("#rate_down_7002").bind("click", function (event) {$.ajax({dataType:"html", evalScripts:true, success:function (data, textStatus) {$("#rates_7002").html(data);}, url:"\/definitions\/vote_down\/7002"});
+return false;});});
+//]]>
+</script></body> 
+</html>
